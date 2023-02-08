@@ -1,0 +1,140 @@
+main{
+    background-color: var(--ion-background-color-light);
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Kalam', cursive;
+
+    #container {
+        padding: 40px;
+        width: 90%;
+        height: 90%;
+
+        display: flex;
+        flex-direction: row;
+
+        .logo {
+            filter: saturate(.6);
+            width: 90px;
+            height: 90px;
+
+            position: absolute;
+            margin: 5px;
+            top: 15%;
+            left: 10%;
+        }
+        
+        #container-left {
+            background-color: var(--ion-toolbar-background);
+            width: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            text-align: center;
+
+            h1{
+                font-size: 64px;
+                color: var(--ion-text-color);
+            }
+            h2{
+                font-size: 40px;
+                color: var(--ion-text-color);
+            }
+        }
+
+        #container-right {
+            background-color: #fff;
+            width: 50%;
+            padding: 35px;
+            
+            h2{
+                color: var(--ion-text-color2);
+                font-size: 40px;
+            }
+           
+            .container-content{
+                display: flex;
+                justify-content: center;
+                align-items: left;
+                flex-direction: column;
+
+                height: 85%;
+
+                
+                input, button{
+                    margin-bottom: 20px;
+                    width: 100%;
+                    height: 35px;
+                    font-size: 18px;
+
+                    outline: none;
+                    
+                    text-indent: 5px;
+                    border-radius: 4px;
+                    
+                    border: 1px solid black;
+                    color: var(--ion-text-color2);
+                    background-color: var(--ion-background-color);
+                }
+
+                #submit {
+                    background-color: var(--ion-toolbar-background);
+                    color: var(--ion-text-color);
+                    padding: 10px;
+                }
+
+                #submit::after {
+                    content: '>';
+                    display: inline-block;
+                    float: right;
+                }
+                
+                #outras-formas{
+                    text-align: center;
+                    color: var(--ion-text-color2);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+
+                #outras-formas::before{
+                  content: '';
+                  width: 150px;
+                  background-color: rgb(32, 32, 32);
+
+                  height: 1px;
+                  margin: 0px 10px;
+
+                }
+
+                #outras-formas::after{
+                    content: '';
+                    width: 150px;
+                    background-color: rgb(32, 32, 32);
+  
+                    height: 1px;
+                    margin: 0px 10px;
+                }
+
+                #login-google {
+                    background-color: var(--ion-background-color-light);
+                }
+
+                #cadastro-button{
+                    font-size: 18px;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
