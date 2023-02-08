@@ -1,0 +1,7 @@
+{
+  "name": "tonto-lanches",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
