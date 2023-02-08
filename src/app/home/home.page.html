@@ -1,7 +1,7 @@
 <ion-header>
   <div class="toolbar-main">
-    <img id="logo-header" src="/assets/imagens-main/tonto-lanches.png" alt="logo">
-
+    <img id="logo-header" class="logo" src="/assets/imagens-main/tonto-lanches.png" alt="logo">
+ 
     <div class="container-nav-list">
       <ul class="nav-list">
         <li class="link">Início</li>
@@ -11,10 +11,10 @@
       </ul>
     </div>
 
-    <input type="search" class="input search" placeholder="Pesquise por uma lanchonete">
-
+    <ion-searchbar id="search" placeholder="Pesquise por uma lanchonete"></ion-searchbar>
+    
     <ul class="nav-list">
-      <li id="minha-conta"><a class="link">Minha Conta</a></li>
+      <li id="minha-conta"><a class="link" routerLink="/login" >Login</a></li>
     </ul>
   </div>
 </ion-header>
@@ -26,6 +26,6 @@
       <p>Se você estiver com fome pode procurar por lanchonetes registradas na sua região</p>
     </div>
 
-    <img id="logo-main" src="/assets/imagens-main/tonto-lanches.png" alt="">
+    <img id="logo-main" class="logo" src="/assets/imagens-main/tonto-lanches.png" alt="">
   </div>
 </ion-content>  

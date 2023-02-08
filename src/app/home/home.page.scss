@@ -1,4 +1,8 @@
 // header ==>
+.logo {
+  filter: saturate(.6);
+}
+
 .toolbar-main{
   height: 10vh;
   background-color: var(--ion-toolbar-background);
@@ -6,16 +10,17 @@
   align-items: center;
   justify-content: space-between;
 
+  
   .toolbar-content {
     display: flex;
     align-items: center;
   }
-
   #logo-header {
     width: 70px;
     height: 70px;
   
     margin:0px 20px;
+    filter: saturate(.5);
   }
   .container-nav-list{
     width: 100%;
@@ -25,22 +30,12 @@
     justify-content: space-around;
     list-style:none;
   }
-  .search {
+  #search {
     width: 80%;
     height: 35px;
     margin: 0px 20px;
     
-    outline: none;
-    border: none;
-    text-indent: 10px;
-    border-radius: 4px;
-    
     color: var(--ion-text-color2);
-    background-color: var(--ion-input-background);
-    border: 2px solid transparent;
-  }
-  .search:focus {
-    border: 2px solid var(--ion-color-destaque);
   }
   
   #minha-conta {
@@ -50,6 +45,7 @@
   .link{
     cursor: pointer;
     color: var(--ion-text-color);
+    text-decoration: none;
   }
   .link:hover{
     color: var(--ion-text-color2);
