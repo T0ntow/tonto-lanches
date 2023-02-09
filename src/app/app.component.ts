@@ -8,3 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   constructor() {}
 }
+
+import { FormGroup } from '@angular/forms';
+formulario: FormGroup;  
