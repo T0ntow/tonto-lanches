@@ -3,6 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
+interface CheckboxItem {
+  label: string;
+  checked: boolean;
+}
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -42,5 +47,18 @@ export class SignupComponent implements OnInit {
         });
     }
   }
-  
+ 
+  items = [
+    { label: 'Option 1', checked: false },
+    { label: 'Option 2', checked: false },
+  ];
+  onCheckboxChange(selectedItem: CheckboxItem) {
+    this.items.forEach(item => {
+      if (item === selectedItem) {
+        item.checked = !item.checked;
+      } else {
+        item.checked = false;
+      }
+    });
+  }
 }

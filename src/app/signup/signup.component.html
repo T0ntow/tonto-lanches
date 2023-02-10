@@ -16,24 +16,19 @@
           <input type="password" placeholder="Senha" formControlName="password"> 
           <!-- <input type="password" placeholder="Reescreva a senha" equired> -->
 
-          <button id="submit" type="submit" [disabled]="signupForm.invalid" (click)="signup()" expand="block">Continue</button>
+          <div id="tipo-conta">
+            <ion-item *ngFor="let item of items">
+              <ion-checkbox  slot="start" [checked]="item.checked" (ionChange)="onCheckboxChange(item)"></ion-checkbox>
+              <ion-label>{{item.label}}</ion-label>
+            </ion-item>
+          </div>
+
+          <ion-button id="submit" type="submit" [disabled]="signupForm.invalid" (click)="signup()" expand="block">Enviar</ion-button>
 
           <p id="outras-formas">Outras formas</p>
           <button id="login-google" >Conecte com o google</button>
           <a routerLink="/login" id="login-button">login</a>
         </form>
-
-        <!-- <form [formGroup]="signupForm">
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="email" formControlName="email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input>
-          </ion-item>
-          <ion-button [disabled]="signupForm.invalid" (click)="signup()" expand="block">Sign Up</ion-button>
-        </form> -->
       </div>
     
     </div>
