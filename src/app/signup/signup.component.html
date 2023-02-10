@@ -16,13 +16,6 @@
           <input type="password" placeholder="Senha" formControlName="password"> 
           <!-- <input type="password" placeholder="Reescreva a senha" equired> -->
 
-          <div id="tipo-conta">
-            <ion-item *ngFor="let item of items">
-              <ion-checkbox  slot="start" [checked]="item.checked" (ionChange)="onCheckboxChange(item)"></ion-checkbox>
-              <ion-label>{{item.label}}</ion-label>
-            </ion-item>
-          </div>
-
           <ion-button id="submit" type="submit" [disabled]="signupForm.invalid" (click)="signup()" expand="block">Enviar</ion-button>
 
           <p id="outras-formas">Outras formas</p>

@@ -66,37 +66,6 @@ main {
         flex-direction: column;
 
         height: 90%;
-          
-        #tipo-conta{
-          // display: inline-flex;
-          // flex-direction: row;
-        }
-
-        ion-item {
-          --background: var(--ion-background-color);
-          color: var(--ion-text-color2);
-
-          margin-bottom: 15px;
-          height: 30px;
-          font-size: 18px;
-
-          border-radius: 4px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          width: 50%;
-        }
-
-        ion-checkbox {
-          --size: 23px;
-          --background-checked: var(--ion-color-destaque);
-        }
-
-        ion-checkbox::part(container) {
-          border-radius: 4px;
-          border: 2px solid var(--ion-background-color-light);
-        }
 
         input,
         button{
