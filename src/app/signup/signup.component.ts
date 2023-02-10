@@ -35,7 +35,6 @@ export class SignupComponent implements OnInit {
             this.router.navigate(['/home']);
 
             console.log('name: ' + this.signupForm.value.user);
-            
           }
         })
         .catch((error) => {

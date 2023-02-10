@@ -1,7 +1,7 @@
 <ion-header>
   <div class="toolbar-main">
     <a routerLink=""><img id="logo-header" class="logo" src="/assets/imagens-main/tonto-lanches.png" alt="logo"></a>
- 
+
     <div class="container-nav-list">
       <ul class="nav-list">
         <li class="link">Início</li>
@@ -10,23 +10,28 @@
         <li class="link">Registrar Lanchonete</li>
       </ul>
     </div>
+  
 
     <ion-searchbar id="search" placeholder="Pesquise por uma lanchonete"></ion-searchbar>
     <ul class="nav-list">
-      <!-- <li id="minha-conta" *ngIf="user; else showLogin"><a class="link"(click)="logout()">Sair</a></li>
-      <li #showLogin><a class="link" routerLink="/login">Login</a></li> -->
 
-      <li id="minha-conta"><a class="link" routerLink="/login">Login</a></li>
+      <li *ngIf="isLoggedIn; else loginButton" id="minha-conta"  (click)="logout()"><a class="link">Sair</a></li>
+
+      <ng-template #loginButton>
+        <li><a class="link" routerLink="/login">Login</a></li>
+      </ng-template>
+
     </ul>
   </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true"> 
   <div id="container">
     <div class="container-text">
-      <p>Venha fazer parte da Tonto Lanches e cadastre já sua empresa em nosso site, clique <a class="texto-destaque link">aqui</a> e faça isso em poucos cliques</p>
+      <p>Venha fazer parte da Tonto Lanches e cadastre já sua empresa em nosso site, clique <a
+          class="texto-destaque link">aqui</a> e faça isso em poucos cliques</p>
       <p>Se você estiver com fome pode procurar por lanchonetes registradas na sua região</p>
     </div>
     <img id="logo-main" class="logo" src="/assets/imagens-main/tonto-lanches.png" alt="">
   </div>
-</ion-content>  
+</ion-content>
