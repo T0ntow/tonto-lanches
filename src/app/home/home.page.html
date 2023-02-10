@@ -13,7 +13,10 @@
 
     <ion-searchbar id="search" placeholder="Pesquise por uma lanchonete"></ion-searchbar>
     <ul class="nav-list">
-      <li id="minha-conta"><a class="link" routerLink="/login" >Login</a></li>
+      <!-- <li id="minha-conta" *ngIf="user; else showLogin"><a class="link"(click)="logout()">Sair</a></li>
+      <li #showLogin><a class="link" routerLink="/login">Login</a></li> -->
+
+      <li id="minha-conta"><a class="link" routerLink="/login">Login</a></li>
     </ul>
   </div>
 </ion-header>
