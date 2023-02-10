@@ -33,25 +33,24 @@ export class SignupComponent implements OnInit {
       // checkbox: [false, [this.onCheckboxChange]]
     });
   }
-
   signup() {
     if (this.signupForm.valid) {
       this.fireAuth.createUserWithEmailAndPassword(this.signupForm.value.email, this.signupForm.value.password)
         .then((userCredential) => {
-          if (userCredential.user) {
+        if (userCredential.user) {
+          const userId = userCredential.user.uid;
+  
+          this.firestore.collection('users').doc(userId).set({
+            email: this.signupForm.value.email,
+            userName: this.signupForm.value.user
+          });
 
-            this.firestore.collection('users').add({
-              userName: this.signupForm.value.user,
-              email: this.signupForm.value.email,
-            });
-
-            alert("Conta criada com sucesso seja bem vindo " + this.signupForm.value.user)
-            this.router.navigate(['/home']);
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+          this.router.navigate(['/home'])
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
     }
   }
 }

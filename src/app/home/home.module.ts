@@ -6,11 +6,16 @@ import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { AngularFireModule } from '@angular/fire/compat';
+
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    AngularFirestoreModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyC0_Q-9LUdYl-79eE7A-npl4JxQBNupFSk",
       authDomain: "tonto-lanches.firebaseapp.com",

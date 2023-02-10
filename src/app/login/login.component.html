@@ -10,10 +10,10 @@
       <h2>Login</h2>
 
     <div class="container-content">
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Senha" required>
+      <input type="email" placeholder="Email"  #userName required>
+      <input type="password" placeholder="Senha" #userPassword required>
 
-      <button id="submit" type="submit">Continue</button>
+      <button id="submit" type="submit" (click)="SignIn(userName.value, userPassword.value)">Continue</button>
 
       <p id="outras-formas">Outras formas</p>
 

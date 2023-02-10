@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+
 })
 
 export class HomeComponent implements OnInit {
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router) {
-  }
+    private router: Router,
+    private firestore: AngularFirestore
+  ) {}
   isLoggedIn = false;
   ngOnInit() {
     this.afAuth.user.subscribe(isLoggedIn => {
-
       if(isLoggedIn){
         console.log("conta logada");
         this.isLoggedIn = true;
