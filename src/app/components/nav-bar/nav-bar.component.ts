@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.scss'],
 })
-
-export class HomeComponent implements OnInit {
+export class NavBarComponent implements OnInit {
   userName: any;
+  isLoggedIn = false;
+
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router,
     private fireAuth: AngularFireAuth,
-    private firestore: AngularFirestore,
-  ) {}
-  
-  isLoggedIn = false;
+    private router: Router,
+  ) { }
 
   ngOnInit() {
     this.afAuth.user.subscribe(user => {
@@ -39,4 +36,5 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/login']);
     console.log("Sair?");
   }
+
 }

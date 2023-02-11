@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
+import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component';
 
 @NgModule({
   imports: [
@@ -23,6 +23,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
       }
     ])
   ],
-  declarations: [HomeComponent]
+  declarations: [
+    HomeComponent,
+    NavBarComponent
+  ]
 })
 export class HomeComponentModule {}

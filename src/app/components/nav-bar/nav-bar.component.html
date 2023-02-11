@@ -1,0 +1,28 @@
+<div class="toolbar-main">
+  <a routerLink=""><img id="logo-header" class="logo" src="/assets/imagens-main/tonto-lanches.png" alt="logo"></a>
+
+  <div class="container-nav-list">
+    <ul class="nav-list">
+      <li><a class="link" routerLink="">Início</a></li>
+      <li><a class="link" routerLink="">Produtos</a></li>
+      <li><a class="link" routerLink="">Lanchonetes</a></li>
+      <li><a class="link" routerLink="/createLanchonete">Registrar Lanchonete</a></li>
+    </ul>
+  </div>
+
+  <ion-searchbar id="search" placeholder="Pesquise por uma lanchonete"></ion-searchbar>
+  <ul class="nav-list">
+
+    <div *ngIf="isLoggedIn; else loginButton" id="container-user-name">
+      <p>Bem vindo! <br> {{userName}}</p>
+
+      <li id="minha-conta" (click)="logout()">
+        <a class="link">Sair</a>
+      </li>
+    </div>
+
+    <ng-template #loginButton>
+      <li><a class="link" routerLink="/login">Login</a></li>
+    </ng-template>
+  </ul>
+</div>
