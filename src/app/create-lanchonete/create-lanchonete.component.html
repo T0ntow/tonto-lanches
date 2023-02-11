@@ -8,21 +8,21 @@
     <div id="container-right">
       <h2>Cadastre sua loja</h2>
       
-      <form>
+      <form [formGroup]="criarLojaForm"  (submit)="submitForm()">
         <div class="container-content">
           <h3>Dados principais</h3>
 
           <ion-label class="label">Nome completo</ion-label>  
-          <input type="text" placeholder="Nome do responsável legal">
+          <input type="text" placeholder="Nome do responsável legal" formControlName="userName">
 
           <ion-label class="label">CPF do responsável</ion-label>
-          <input type="text" placeholder="000.000.000-00">
+          <input type="text" placeholder="000.000.000-00" formControlName="cpf">
           
           <ion-label class="label">Nome da lanchonete</ion-label>
-          <input type="text">
+          <input type="text" formControlName="lojaName">
 
           <ion-label class="label">Telefone celular</ion-label>
-          <input type="tel" placeholder="(00) 00000-0000">
+          <input type="tel" placeholder="(00) 00000-0000" formControlName="tel"> 
 
           <!-- <input type="password" placeholder="Reescreva a senha" equired> -->
 
@@ -30,30 +30,28 @@
           <h3>Endereço da loja</h3>
 
           <ion-label class="label">CEP</ion-label>
-          <input type="number" placeholder="00000-000">
+          <input type="number" placeholder="00000-000" formControlName="cep">
 
           <ion-label class="label">Estado</ion-label>
-          <input type="text"required>
+          <input type="text"  formControlName="estado">
 
           <ion-label class="label">Cidade</ion-label>
-          <input type="text"required>
+          <input type="text" formControlName="cidade">
 
           <ion-label class="label">Bairro</ion-label>
-          <input type="text"required>
+          <input type="text" formControlName="bairro"> 
 
           <ion-label class="label">Endereço</ion-label>
-          <input type="text"required>
+          <input type="text" formControlName="end">
 
           <ion-label class="label">Número</ion-label>
-          <input type="numer"required>
+          <input type="numer" formControlName="num">
 
           <ion-label class="label">Complemento (opcional)</ion-label>
-          <input type="text"required>
-
-
+          <input type="text" formControlName="complemento">
         </div>
 
-        <ion-button id="submit" type="submit">Enviar</ion-button>
+        <ion-button id="submit" type="submit" >Enviar</ion-button>
       </form>
 
     </div>

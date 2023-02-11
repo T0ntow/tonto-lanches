@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { CreateLanchoneteComponent } from './create-lanchonete.component';
 import { AngularFireModule } from '@angular/fire/compat';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 
@@ -15,7 +15,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     AngularFirestoreModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyC0_Q-9LUdYl-79eE7A-npl4JxQBNupFSk",
       authDomain: "tonto-lanches.firebaseapp.com",
