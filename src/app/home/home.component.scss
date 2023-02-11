@@ -16,11 +16,10 @@
       align-items: center;
     }
     #logo-header {
-      width: 85px;
+      width: 130px;
       height: 70px;
-    
-      margin:0px 20px;
-      
+
+      margin: 0px 10px;
     }
     .container-nav-list{
       width: 100%;
@@ -29,7 +28,26 @@
       display: flex;
       justify-content: space-around;
       list-style:none;
+      flex-direction: row;
+
+      #login { 
+        padding: 20px;
+      }
+      div {
+        display: flex;
+        justify-content: space-around;
+        list-style:none;
+        flex-direction: row;
+        align-items: center;
+
+        p{
+          overflow: hidden;
+          width: 150px;
+          height: 40px;
+        }
+      }
     }
+     
     #search {
       width: 80%;
       height: 35px;
@@ -46,6 +64,7 @@
       cursor: pointer;
       color: var(--ion-text-color);
       text-decoration: none;
+      padding: 10px;
     }
     .link:hover{
       color: var(--ion-text-color2);

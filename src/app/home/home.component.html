@@ -7,18 +7,20 @@
         <li class="link">Início</li>
         <li class="link">Produtos</li>
         <li class="link">Lanchonetes</li>
-        <li class="link">Registrar Lanchonete</li>
+        <li class="link"><a routerLink="/createLanchonete">Registrar Lanchonete</a></li>
       </ul>
     </div>
-  
 
     <ion-searchbar id="search" placeholder="Pesquise por uma lanchonete"></ion-searchbar>
     <ul class="nav-list">
-
-      <li *ngIf="isLoggedIn; else loginButton" id="minha-conta" (click)="logout()">
-        <a class="link">Sair</a>
-      </li>
       
+      <div *ngIf="isLoggedIn; else loginButton" id="container-user-name">
+        <p>Bem vindo! <br> {{userName}}</p>
+
+        <li id="minha-conta" (click)="logout()">
+          <a class="link">Sair</a>
+        </li>
+      </div>
 
       <ng-template #loginButton>
         <li><a class="link" routerLink="/login">Login</a></li>

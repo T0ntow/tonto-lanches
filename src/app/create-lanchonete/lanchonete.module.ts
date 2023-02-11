@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home.component';
+import { CreateLanchoneteComponent } from './create-lanchonete.component';
 import { AngularFireModule } from '@angular/fire/compat';
 
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -28,10 +28,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     RouterModule.forChild([
       {
         path: '',
-        component: HomeComponent
+        component: CreateLanchoneteComponent
       }
     ])
   ],
-  declarations: [HomeComponent]
+  declarations: [CreateLanchoneteComponent]
 })
-export class HomeComponentModule {}
+export class CreateLanchonetComponenteModule {}

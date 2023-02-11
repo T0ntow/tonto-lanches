@@ -39,13 +39,17 @@ export class SignupComponent implements OnInit {
         .then((userCredential) => {
         if (userCredential.user) {
           const userId = userCredential.user.uid;
+
+          userCredential.user.updateProfile({
+            displayName: this.signupForm.value.user
+          });
   
           this.firestore.collection('users').doc(userId).set({
             email: this.signupForm.value.email,
             userName: this.signupForm.value.user
           });
 
-          this.router.navigate(['/home'])
+          this.router.navigate(['/home']);
         }
       })
       .catch(error => {
