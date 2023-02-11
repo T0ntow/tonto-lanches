@@ -24,7 +24,7 @@ export class CreateLanchoneteComponent implements OnInit {
   ngOnInit() {
     this.criarLojaForm = this.formBuilder.group({
       //Dados principais
-      userName: ['', [Validators.required]],
+      userNameLoja: ['', [Validators.required]],
       cpf: ['', [Validators.required]],
       lojaName: ['', [Validators.required]],
       tel: ['', [Validators.required]],
@@ -47,7 +47,7 @@ export class CreateLanchoneteComponent implements OnInit {
       this.afAuth.user.subscribe(user => {
         if (user) {
           this.firestore.collection('lojas').doc(user?.uid).set({
-            userName: this.criarLojaForm.value.userName,
+            userNameLoja: this.criarLojaForm.value.userNameLoja,
             cpf: this.criarLojaForm.value.cpf,
             lojaName: this.criarLojaForm.value.lojaName,
             tel: this.criarLojaForm.value.tel,
@@ -67,9 +67,9 @@ export class CreateLanchoneteComponent implements OnInit {
 
           this.router.navigate(['/home']);
         }
-
       });
     }
+    
   }
 
 }

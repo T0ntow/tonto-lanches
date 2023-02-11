@@ -8,21 +8,21 @@
     <div id="container-right">
       <h2>Cadastre sua loja</h2>
       
-      <form [formGroup]="criarLojaForm"  (submit)="submitForm()">
+      <form [formGroup]="criarLojaForm" >
         <div class="container-content">
           <h3>Dados principais</h3>
 
           <ion-label class="label">Nome completo</ion-label>  
-          <input type="text" placeholder="Nome do responsável legal" formControlName="userName">
+          <input type="text" placeholder="Nome do responsável legal" formControlName="userNameLoja">
 
           <ion-label class="label">CPF do responsável</ion-label>
-          <input type="text" placeholder="000.000.000-00" formControlName="cpf">
+          <input type="text" placeholder="000.000.000-00" formControlName="cpf" mask="000.000.000-00">
           
           <ion-label class="label">Nome da lanchonete</ion-label>
           <input type="text" formControlName="lojaName">
 
           <ion-label class="label">Telefone celular</ion-label>
-          <input type="tel" placeholder="(00) 00000-0000" formControlName="tel"> 
+          <input type="tel" placeholder="(00) 00000-0000" formControlName="tel" mask="(00)00000-0000"> 
 
           <!-- <input type="password" placeholder="Reescreva a senha" equired> -->
 
@@ -30,7 +30,7 @@
           <h3>Endereço da loja</h3>
 
           <ion-label class="label">CEP</ion-label>
-          <input type="number" placeholder="00000-000" formControlName="cep">
+          <input type="text" placeholder="00000-000" formControlName="cep" mask="00000-000" >
 
           <ion-label class="label">Estado</ion-label>
           <input type="text"  formControlName="estado">
@@ -51,7 +51,7 @@
           <input type="text" formControlName="complemento">
         </div>
 
-        <ion-button id="submit" type="submit" >Enviar</ion-button>
+        <ion-button id="submit" type="submit" (click)="submitForm()">Enviar</ion-button>
       </form>
 
     </div>

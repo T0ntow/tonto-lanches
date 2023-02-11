@@ -5,28 +5,23 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { CreateLanchoneteComponent } from './create-lanchonete.component';
-import { AngularFireModule } from '@angular/fire/compat';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 
 @NgModule({
-  imports: [
+  imports: [  
     CommonModule,
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyC0_Q-9LUdYl-79eE7A-npl4JxQBNupFSk",
-      authDomain: "tonto-lanches.firebaseapp.com",
-      projectId: "tonto-lanches",
-      storageBucket: "tonto-lanches.appspot.com",
-      messagingSenderId: "771729409927",
-      appId: "1:771729409927:web:d1560b2e3cc930ef0ff522",
-      measurementId: "G-80XR8CVLV6"
-    }),
+
+    NgxMaskDirective,
+    NgxMaskPipe,
+
     RouterModule.forChild([
       {
         path: '',
@@ -34,6 +29,11 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
       }
     ])
   ],
+
+  providers: [
+    provideNgxMask()
+  ],
+
   declarations: [CreateLanchoneteComponent]
 })
 export class CreateLanchonetComponenteModule {}
