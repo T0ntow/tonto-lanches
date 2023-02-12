@@ -8,50 +8,80 @@
     <div id="container-right">
       <h2>Cadastre sua loja</h2>
       
-      <form [formGroup]="criarLojaForm" >
+      <form [formGroup]="criarLojaForm" (ngSubmit)="submitForm()">
         <div class="container-content">
           <h3>Dados principais</h3>
 
           <ion-label class="label">Nome completo</ion-label>  
           <input type="text" placeholder="Nome do responsável legal" formControlName="userNameLoja">
+          <span class="error" *ngIf="!formVarification && errorControl['userNameLoja'].errors?.['required']">
+            Nome é obrigatório.
+          </span>
 
           <ion-label class="label">CPF do responsável</ion-label>
           <input type="text" placeholder="000.000.000-00" formControlName="cpf" mask="000.000.000-00">
+          <span class="error" *ngIf="!formVarification && errorControl['cpf'].errors?.['required']">
+            cpf é obrigatório.
+          </span>
           
           <ion-label class="label">Nome da lanchonete</ion-label>
           <input type="text" formControlName="lojaName">
-
+          <span class="error" *ngIf="!formVarification && errorControl['lojaName'].errors?.['required']">
+            campo obrigatório.
+          </span>
+          
           <ion-label class="label">Telefone celular</ion-label>
           <input type="tel" placeholder="(00) 00000-0000" formControlName="tel" mask="(00)00000-0000"> 
-
-          <!-- <input type="password" placeholder="Reescreva a senha" equired> -->
-
+          <span class="error" *ngIf="!formVarification && errorControl['tel'].errors?.['required']">
+            telefone é obrigatório.
+          </span>
 
           <h3>Endereço da loja</h3>
 
           <ion-label class="label">CEP</ion-label>
           <input type="text" placeholder="00000-000" formControlName="cep" mask="00000-000" >
+          <span class="error" *ngIf="!formVarification && errorControl['cep'].errors?.['required']">
+            CEP é obrigatório.
+          </span>
 
           <ion-label class="label">Estado</ion-label>
           <input type="text"  formControlName="estado">
+          <span class="error" *ngIf="!formVarification && errorControl['estado'].errors?.['required']">
+            Estado é obrigatório.
+          </span>
 
           <ion-label class="label">Cidade</ion-label>
           <input type="text" formControlName="cidade">
+          <span class="error" *ngIf="!formVarification && errorControl['cidade'].errors?.['required']">
+            Cidade é obrigatório.
+          </span>
 
           <ion-label class="label">Bairro</ion-label>
           <input type="text" formControlName="bairro"> 
+          <span class="error" *ngIf="!formVarification && errorControl['bairro'].errors?.['required']">
+            Bairro é obrigatório.
+          </span>
 
           <ion-label class="label">Endereço</ion-label>
           <input type="text" formControlName="end">
+          <span class="error" *ngIf="!formVarification && errorControl['end'].errors?.['required']">
+            Endereço é obrigatório.
+          </span>
 
           <ion-label class="label">Número</ion-label>
           <input type="numer" formControlName="num">
+          <span class="error" *ngIf="!formVarification && errorControl['num'].errors?.['required']">
+            Número é obrigatório.
+          </span>
 
           <ion-label class="label">Complemento (opcional)</ion-label>
           <input type="text" formControlName="complemento">
         </div>
-
-        <ion-button id="submit" type="submit" (click)="submitForm()">Enviar</ion-button>
+        
+        <p class="error" id="errorMessage" *ngIf="!formVarification" >
+          Certifique-se que todos os campos estejam corretos
+        </p>
+        <ion-button id="submit" type="submit">Enviar</ion-button>
       </form>
 
     </div>

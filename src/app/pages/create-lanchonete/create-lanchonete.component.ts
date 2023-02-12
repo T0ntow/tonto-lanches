@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { copyFile } from 'fs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,10 +11,10 @@ import { Router } from '@angular/router';
 })
 export class CreateLanchoneteComponent implements OnInit {
   criarLojaForm: FormGroup = new FormGroup({});
+  formVarification = true;
   constructor(
     private formBuilder: FormBuilder,
     private afAuth: AngularFireAuth,
-    private fireAuth: AngularFireAuth,
     private firestore: AngularFirestore,
     private router: Router,
 
@@ -27,7 +26,7 @@ export class CreateLanchoneteComponent implements OnInit {
       userNameLoja: ['', [Validators.required]],
       cpf: ['', [Validators.required]],
       lojaName: ['', [Validators.required]],
-      tel: ['', [Validators.required]],
+      tel: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
 
       //End. da loja
       cep: ['', [Validators.required]],
@@ -36,14 +35,16 @@ export class CreateLanchoneteComponent implements OnInit {
       bairro: ['', [Validators.required]],
       end: ['', [Validators.required]],
       num: ['', [Validators.required]],
-      complemento: ['', [Validators.required]],
+      complemento: ['', []],
     });
+  }
+  get errorControl() {
+    return this.criarLojaForm.controls;
   }
 
   submitForm() {
     if (this.criarLojaForm.valid) {
       console.log(this.criarLojaForm.value);
-
       this.afAuth.user.subscribe(user => {
         if (user) {
           this.firestore.collection('lojas').doc(user?.uid).set({
@@ -63,13 +64,15 @@ export class CreateLanchoneteComponent implements OnInit {
 
             userID: user?.uid,
           });
-
-
+          
+          this.formVarification = true;
           this.router.navigate(['/home']);
         }
       });
     }
-    
+    else {
+      this.formVarification = false
+    }
   }
-
 }
+  
