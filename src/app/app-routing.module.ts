@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'createLanchonete',
     loadChildren: () => import('./pages/create-lanchonete/lanchonete.module').then(m => m.CreateLanchonetComponenteModule)
+  },
+  {
+    path: 'lanchonetes',
+    loadChildren: () => import('src/app/components/lanchonetes/lanchonetes.module').then(m => m.LanchonetesComponentModule)
   }
 ];
 
