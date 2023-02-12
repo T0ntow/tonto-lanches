@@ -28,8 +28,9 @@ import { ReactiveFormsModule } from '@angular/forms';
       measurementId: "G-80XR8CVLV6"
     }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}
 

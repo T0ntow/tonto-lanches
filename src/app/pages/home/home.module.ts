@@ -8,6 +8,8 @@ import { HomeComponent } from './home.component';
 
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
+
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component';
   ],
   declarations: [
     HomeComponent,
-    NavBarComponent
+    NavBarComponent,
+    FooterComponent
   ]
 })
 export class HomeComponentModule {}
