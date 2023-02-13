@@ -14,7 +14,7 @@ export class LojasComponent implements OnInit {
 
   lojas = [
     { nome: 'Lojinha 1', frete: 'Grátis', avaliacao: 3.5},
-    { nome: 'Lojinha 2', frete: 'Grátis' , avaliacao: 3.1},
+    { nome: 'Lojinha 2', frete: 'Grátis' , avaliacao: 3.2},
     { nome: 'Lojinha 3' , frete: 'Grátis', avaliacao: 3.1},
     { nome: 'Lojinha 4' , frete: 'Grátis', avaliacao: 3.1},
     { nome: 'Lojinha 5' , frete: 'Grátis', avaliacao: 3.1},

@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { LojasComponent } from 'src/app/components/lojas/lojas.component';
+import { BannersComponent } from 'src/app/components/banners/banners.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { LojasComponent } from 'src/app/components/lojas/lojas.component';
     HomeComponent,
     NavBarComponent,
     FooterComponent,
-    LojasComponent
+    LojasComponent,
+    BannersComponent
   ]
 })
 export class HomeComponentModule {}
