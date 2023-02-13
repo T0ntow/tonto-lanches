@@ -1,0 +1,90 @@
+h1 {
+  color: var(--ion-text-color2);
+}
+
+#container-lojas {
+  padding: 20px;
+  font-family: "Kalam", cursive;
+
+  margin: auto;
+  height: 30vh;
+
+  #lojas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px 30px;
+
+    .loja {
+      width: 360px;
+      height: 150px;
+      border-radius: 20px;
+
+      display: flex;
+      align-items: center;
+      padding: 10px;
+
+      .logotipo {
+        width: 100px;
+        height: 100px;
+
+        background-color: var(--ion-background-color);
+
+        border: 1px solid;
+
+        border-radius: 20px;
+      }
+
+      .container-content{
+        padding: 15px;
+        width: 90%;
+
+        h2 {
+          color: var(--ion-text-color2);
+        }
+        .icon-avaliacao {
+          width: 15px;
+          height: 15px;
+
+        }
+        .container-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          div {
+            display: flex;
+            align-items: center;
+          }
+
+          #frete {
+            color: var(--ion-text-color2);
+          }
+        
+          #avaliacao {
+            color: #ffbf00;
+            font-size: 18px;
+          }
+        }
+      }
+      
+    }
+
+    .loja:hover {
+      box-shadow: 0px 0px 8px 2px #6565655e;
+      background-color: #fff;
+      transition: all 0.5s;
+      transform: scale(1.03);
+    }
+  }
+  @media (max-width: 1160px) {
+    #lojas {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 770px) {
+    #lojas {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

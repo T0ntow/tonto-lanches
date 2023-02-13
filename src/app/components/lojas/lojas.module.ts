@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
+import { CommonModule } from '@angular/common';
 import { LojasComponent } from './lojas.component';
+
 @NgModule({
-  imports: [
+  imports: [ 
     CommonModule,
-    IonicModule,
-   
     RouterModule.forChild([
       {
         path: '',
@@ -16,6 +14,8 @@ import { LojasComponent } from './lojas.component';
       }
     ])
   ],
-  declarations: [LojasComponent]
+  declarations: [
+    LojasComponent,
+  ],
 })
 export class LojasComponentModule {}

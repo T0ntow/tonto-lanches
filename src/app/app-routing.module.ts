@@ -23,15 +23,17 @@ const routes: Routes = [
     path: 'createLanchonete',
     loadChildren: () => import('./pages/create-lanchonete/lanchonete.module').then(m => m.CreateLanchonetComponenteModule)
   },
-  {
-    path: 'lojas',
-    loadChildren: () => import('./components/lojas/lojas.module').then(m => m.LojasComponentModule)
-  },
+  
+  //aparentemente não podemos ter dois imports de modulos (Kkkk muitas hrs gastas)
+  // {
+  //   path: 'lojas',
+  //   loadChildren: () => import('./components/lojas/lojas.module').then(m => m.LojasComponentModule)
+  // },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
   exports: [RouterModule]
 })

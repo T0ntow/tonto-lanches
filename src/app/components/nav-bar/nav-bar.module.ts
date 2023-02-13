@@ -12,4 +12,4 @@ import { NavBarComponent } from './nav-bar.component';
     NavBarComponent,
   ],
 })
-export class LanchonetesComponentModule {}
+export class NavBarComponentModule {}
