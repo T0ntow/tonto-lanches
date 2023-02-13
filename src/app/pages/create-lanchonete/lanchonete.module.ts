@@ -27,7 +27,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
         path: '',
         component: CreateLanchoneteComponent
       }
-    ])
+    ]),
+   
   ],
 
   providers: [

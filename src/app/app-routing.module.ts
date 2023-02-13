@@ -24,9 +24,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/create-lanchonete/lanchonete.module').then(m => m.CreateLanchonetComponenteModule)
   },
   {
-    path: 'lanchonetes',
-    loadChildren: () => import('src/app/components/lanchonetes/lanchonetes.module').then(m => m.LanchonetesComponentModule)
-  }
+    path: 'lojas',
+    loadChildren: () => import('./components/lojas/lojas.module').then(m => m.LojasComponentModule)
+  },
 ];
 
 @NgModule({

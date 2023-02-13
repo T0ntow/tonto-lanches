@@ -9,6 +9,7 @@ import { HomeComponent } from './home.component';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { NavBarComponent } from 'src/app/components/nav-bar/nav-bar.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+// import { LanchonetesComponent } from 'src/app/components/lanchonetes/lanchonetes.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     FormsModule,
     IonicModule,
     AngularFirestoreModule,
-    
+
     RouterModule.forChild([
       {
         path: '',
@@ -28,7 +29,8 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
   declarations: [
     HomeComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    // LanchonetesComponent
   ]
 })
 export class HomeComponentModule {}
