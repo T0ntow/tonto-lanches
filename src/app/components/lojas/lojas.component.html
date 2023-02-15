@@ -1,11 +1,13 @@
 <div id="container-lojas">
   <h1>Lojas</h1>
-  <div id="lojas" >
-    <div class="loja" *ngFor="let loja of lojas">
-      <img src="https://static-images.ifood.com.br/image/upload/t_medium/logosgde/292b9e97-0fdf-4952-be73-4fb162346931/202203291945_PgBf_i.jpg?imwidth=256" alt="logotipo" class="logotipo">
-      
+  <div id="lojas">
+    <div class="loja"  *ngFor="let loja of lojas | async">
+      <img
+        src="https://static-images.ifood.com.br/image/upload/t_medium/logosgde/292b9e97-0fdf-4952-be73-4fb162346931/202203291945_PgBf_i.jpg?imwidth=256"
+        alt="logotipo" class="logotipo">
+
       <div class="container-content">
-        <h2>{{ loja.nome }}</h2>
+        <h2>{{ loja.lojaName }}</h2>
         <div class="container-bottom">
           <p id="frete">{{loja.frete}}</p>
 
@@ -16,6 +18,9 @@
         </div>
 
       </div>
+
     </div>
+
+   
   </div>
 </div>

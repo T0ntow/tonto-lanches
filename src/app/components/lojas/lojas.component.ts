@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-lojas',
   templateUrl: './lojas.component.html',
@@ -7,23 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class LojasComponent implements OnInit {
+  lojas: Observable<any[]> | undefined;
 
-  constructor() { }
+  constructor(
+    private firestore: AngularFirestore,
 
-  ngOnInit() {}
+  ) { 
+    this.lojas = this.firestore.collection('lojas').valueChanges();
+  }
 
-  lojas = [
-    { nome: 'Lojinha 1', frete: 'Grátis', avaliacao: 3.5},
-    { nome: 'Lojinha 2', frete: 'Grátis' , avaliacao: 3.2},
-    { nome: 'Lojinha 3' , frete: 'Grátis', avaliacao: 3.1},
-    { nome: 'Lojinha 4' , frete: 'Grátis', avaliacao: 3.1},
-    { nome: 'Lojinha 5' , frete: 'Grátis', avaliacao: 3.1},
-    { nome: 'Lojinha 6' , frete: 'Grátis', avaliacao: 3.1},
-    { nome: 'Lojinha 7' , frete: 'Grátis', avaliacao: 3.1},
-    { nome: 'Lojinha 8' , frete: 'Grátis', avaliacao: 3.1},
-    { nome: 'Lojinha 9' , frete: 'Grátis', avaliacao: 3.1},
-    { nome: 'Lojinha 10' , frete: 'Grátis', avaliacao: 3.1}
-  ];
-}
-
-
+  ngOnInit() {
+   
+  }
+      
+}  
