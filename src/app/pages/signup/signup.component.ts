@@ -46,7 +46,8 @@ export class SignupComponent implements OnInit {
   
           this.firestore.collection('users').doc(userId).set({
             email: this.signupForm.value.email,
-            userName: this.signupForm.value.user
+            userName: this.signupForm.value.user,
+            lojaExists: false,
           });
 
           this.router.navigate(['/home']);

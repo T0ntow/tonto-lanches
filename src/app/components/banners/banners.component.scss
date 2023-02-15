@@ -1,60 +1,43 @@
 #container-banners {
     width: 100%;
-    margin: 30px 0px;
+    margin: 20px 0px;
     background-color: var(--ion-background-color-gray);
 
     .banner {
         display: flex;
         align-items: center;
         margin: auto;
-        width: 92%;
-
+        width: 90%;
+        .img-icon{
+            width: 40px;
+            height: 40px;
+        }
         img {
-            height: 500px;
+            height: 440px;
             width: 100%;
         }
 
         .icon {
             cursor: pointer;
+            width: 5%;
+            height: 440px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .icon:hover {
             transition: all 0.5s;
             opacity: 0.8;
         }
-        #icon-left {
-            border-radius: 50%;
-            background-color: white;
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            left: 7%;
-            display: flex;
-            align-items: center;
 
-            img {
-                width: 40px;
-                height: 40px;
-                position: absolute;
-                left: 7%;
-            }
+        #icon-left {
+            left: 0%;
         }
 
         #icon-right {
-            border-radius: 50%;
-            background-color: white;
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            right: 7%;
-            display: flex;
-            align-items: center;
-
-            img {
-                width: 40px;
-                height: 40px;
-                position: absolute;
-                right: 7%;
-            }
+            right: 0%;
         }
+       
     }
 }

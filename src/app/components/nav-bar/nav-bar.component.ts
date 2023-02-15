@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,25 +11,38 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
   userName: any;
   isLoggedIn = false;
+  lojaExists = false;
 
   constructor(
     private afAuth: AngularFireAuth,
     private fireAuth: AngularFireAuth,
     private router: Router,
+    private firestore: AngularFirestore
   ) { }
 
   ngOnInit() {
     this.afAuth.user.subscribe(user => {
-      if(user){
-          this.fireAuth.currentUser.then((user) => {
+      if (user) {
+        this.fireAuth.currentUser.then((user) => {
           this.userName = user?.displayName
           this.isLoggedIn = true;
         });
+
+        if (user) {
+          this.firestore.collection('users').doc(user.uid).valueChanges()
+          .subscribe((userDoc: any) => {
+            this.lojaExists = userDoc.lojaExists;
+          });
+        }
+        
       }
-      else{
+     
+      else {
         this.isLoggedIn = false;
       }
     });
+
+
   }
 
   logout() {

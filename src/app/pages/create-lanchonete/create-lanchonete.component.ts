@@ -64,6 +64,10 @@ export class CreateLanchoneteComponent implements OnInit {
 
             userID: user?.uid,
           });
+
+          this.firestore.collection('users').doc(user?.uid).update({
+            lojaExists: true,
+          });
           
           this.formVarification = true;
           this.router.navigate(['/home']);
@@ -75,4 +79,3 @@ export class CreateLanchoneteComponent implements OnInit {
     }
   }
 }
-  
