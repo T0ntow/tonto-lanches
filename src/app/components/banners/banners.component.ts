@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-banners',
@@ -12,13 +12,16 @@ export class BannersComponent implements OnInit {
     'https://blog-parceiros.ifood.com.br/wp-content/uploads/2022/07/banner-3.png'
   ];
   currentImageIndex = 0;
-  constructor() { }
+  constructor(
+  ) {
+
+   }
 
   ngOnInit() {
     setInterval(() => {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-    }, 5000)
-   
+  }, 5000)
+
   }
 
   nextImage() {

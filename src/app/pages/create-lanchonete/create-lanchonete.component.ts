@@ -72,6 +72,9 @@ export class CreateLanchoneteComponent implements OnInit {
           this.formVarification = true;
           this.router.navigate(['/home']);
         }
+        else {
+          alert("Certifique-se que esteja logado em uma conta para continuar")
+        }
       });
     }
     else {

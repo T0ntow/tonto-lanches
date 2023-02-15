@@ -1,10 +1,10 @@
 <div id="container-banners">
   <div class="banner">
-    <span id="icon-left"  class="icon"  (click)="previousImage()">
+    <span id="icon-left"  class="icon" (click)="previousImage()">
       <img class="img-icon" src="https://cdn-icons-png.flaticon.com/512/271/271220.png" alt="">
     </span>
 
-    <img [src]="images[currentImageIndex]">
+    <img [src]="images[currentImageIndex]" class="img">
 
     <span id="icon-right" class="icon" (click)="nextImage()">
       <img class="img-icon" src="https://cdn-icons-png.flaticon.com/512/271/271228.png" alt="">
