@@ -62,6 +62,9 @@ export class CreateLanchoneteComponent implements OnInit {
             num: this.criarLojaForm.value.num,
             complemento: this.criarLojaForm.value.complemento,
 
+            frete: 'Grátis',
+            avaliacao: 0.0,
+
             userID: user?.uid,
           });
 

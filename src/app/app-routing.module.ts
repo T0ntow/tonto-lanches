@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'createLanchonete',
     loadChildren: () => import('./pages/create-lanchonete/lanchonete.module').then(m => m.CreateLanchonetComponenteModule)
   },
+  {
+    path: 'minha-loja',
+    loadChildren: () => import('./pages/minha-loja/minha-loja.module').then( m => m.MinhaLojaPageModule)
+  },
   
   //aparentemente não podemos ter dois imports de modulos (Kkkk muitas hrs gastas)
   // {
