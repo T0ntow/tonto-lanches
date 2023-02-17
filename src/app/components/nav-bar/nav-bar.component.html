@@ -1,20 +1,45 @@
 <div class="toolbar-main">
-  <a routerLink=""><img id="logo-header" class="logo" src="/assets/imagens-main/tonto-lanches.png" alt="logo"></a>
+  <!-- Menu burger -->
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+  
+    <ul class="menu__box">
+      <div><a routerLink="/home"><img class="logo" src="assets/imagens-main/tonto-lanches.png" alt=""></a></div>
 
+      <p class="menu__item">Bem vindo! <br> {{userName}}</p>
+
+      <li><a class="link menu__item" routerLink="">Produtos</a></li>
+      <li><a class="link menu__item" routerLink="/lojas">Lojas</a></li>
+      <li *ngIf="!lojaExists; else minhaLanchonete"><a class="link menu__item" routerLink="/createLanchonete">Registrar Lanchonete</a></li>
+
+
+      <li (click)="logout()" *ngIf="isLoggedIn; else loginButton">
+        <a class="link menu__item" >Sair</a>
+      </li>
+
+      <ng-template #loginButton>
+        <li><a class="link menu__item" routerLink="/login">Login</a></li>
+      </ng-template>
+    </ul>
+  </div>
+  <!--  -->
+
+
+  <a routerLink=""><img id="logo-header" src="/assets/imagens-main/tonto-lanches.png" alt="logo"></a>
   <div class="container-nav-list">
     <ul class="nav-list">
       <li><a class="link" routerLink="">Início</a></li>
       <li><a class="link" routerLink="">Produtos</a></li>
       <li><a class="link" routerLink="/lojas">Lojas</a></li>
       <li *ngIf="!lojaExists; else minhaLanchonete"><a class="link" routerLink="/createLanchonete">Registrar Lanchonete</a></li>
-      
-      <!-- <li><a class="link" routerLink="/createLanchonete" >Registrar Lanchonete</a></li> -->
     </ul>
   </div>
 
   <ion-searchbar id="search" placeholder="Pesquise por uma lanchonete"></ion-searchbar>
   <ul class="nav-list">
-
     <div *ngIf="isLoggedIn; else loginButton" id="container-user-name">
       <p>Bem vindo! <br> {{userName}}</p>
 
@@ -27,7 +52,7 @@
       <li><a class="link" routerLink="/login">Login</a></li>
     </ng-template>
     <ng-template  #minhaLanchonete>
-      <li><a class="link" routerLink="/minha-loja" >Minha Lanchonete</a></li>
+      <li><a class="link menu__item" routerLink="/minha-loja" >Minha Lanchonete</a></li>
     </ng-template>
   </ul>
 </div>

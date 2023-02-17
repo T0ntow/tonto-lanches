@@ -4,16 +4,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: "Kalam", cursive;
+
+  font-size: 1.2rem;
 
   .toolbar-content {
     display: flex;
     align-items: center;
   }
   #logo-header {
-    width: 130px;
+    min-width: 70px;
     height: 70px;
 
-    margin: 0px 10px;
+    margin-left: 20px;
   }
   .container-nav-list {
     width: 100%;
@@ -23,6 +26,7 @@
     justify-content: space-around;
     list-style: none;
     flex-direction: row;
+    align-items: center;
 
     #login {
       padding: 20px;
@@ -43,10 +47,6 @@
   }
 
   #search {
-    width: 80%;
-    height: 35px;
-    margin: 0px 20px;
-
     color: var(--ion-text-color2);
   }
 
@@ -64,4 +64,117 @@
     color: var(--ion-text-color2);
     transition: all 0.2s;
   }
+}
+//burger-menu
+.hamburger-menu{
+  display: none;
+  font-family: "Kalam", cursive;
+}
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  top: 4vh;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  z-index: 101;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  position: absolute;
+  width: 35px;
+  height: 0.2rem;
+  background-color: #acacac;
+  transition-duration: 0.25s;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  z-index: 100;
+
+  transition-duration: 0.25s;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  background-color: var(--ion-background-color);
+
+  div {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: 0.25s;
+
+    color: var(--ion-text-color2);
+  }
+  .menu__item:hover {
+    background-color: #dccfcf;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .hamburger-menu{
+    display: block;
+  }
+
+  .container-nav-list {
+    display: none;
+  }
+  #container-user-name {
+    display: none;
+  }  
+  #logo-header {
+    display: none;
+  }
+
+  .toolbar-main #search{
+    margin-left: 60px;
+    width: 100%;
+  }
+
 }

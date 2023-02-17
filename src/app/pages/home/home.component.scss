@@ -13,7 +13,7 @@
   }
 
   p {
-    font-size: 23px;
+    font-size: 1.5rem;
     color: var(--ion-text-color2);
 
     width: 550px;
@@ -28,4 +28,30 @@
     width: 300px;
     height: 300px;
   }
+}
+@media screen and (max-width: 920px) {
+  #container {
+    flex-direction: column;
+    height: 40vh;
+    p {
+      width: 100%;
+    }
+    #logo-main {
+      width: 250px;
+      height: 250px;
+    }
+  } 
+}
+
+@media screen and (max-width: 600px) {
+  #container {
+    p {
+      font-size: 1rem;
+      width: 100%;
+    }
+    #logo-main {
+      width: 150px;
+      height: 150px;
+    }
+  } 
 }
