@@ -1,44 +1,47 @@
 #container-banners {
-    width: 100%;
-    margin: 20px 0px;
-    background-color: var(--ion-background-color-gray);
+  width: 100%;
+  margin: 20px 0px;
+  background-color: var(--ion-background-color-gray);
 
-    .banner {
-        display: flex;
-        align-items: center;
-        margin: auto;
-        width: 90%;
-        .img-icon {
-            width: 40px;
-            height: 40px;
-        }
+  .banner {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 90%;
 
-        img {
-            height: 440px;
-            width: 100%;
-            object-fit: contain;
-        }
-
-        .icon {
-            cursor: pointer;
-            width: 5%;
-            height: 440px;
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .icon:hover {
-            transition: all 0.5s;
-            opacity: 0.8;
-        }
-
-        #icon-left {
-            left: 0%;
-        }
-
-        #icon-right {
-            right: 0%;
-        }
+    cursor: pointer;
+    .img-icon {
+      width: 40px;
+      height: 40px;
     }
+
+    img {
+      height: 440px;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    .icon {
+      cursor: pointer;
+      width: 5%;
+      height: 440px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon:hover {
+      transition: all 0.5s;
+      opacity: 0.8;
+    }
+
+    #icon-left {
+      left: 0%;
+    }
+
+    #icon-right {
+      right: 0%;
+    }
+  }
 }
