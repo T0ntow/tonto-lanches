@@ -70,24 +70,24 @@
   display: none;
   font-family: "Kalam", cursive;
 }
-#menu__toggle {
+#menu-toggle {
   opacity: 0;
 }
-#menu__toggle:checked + .menu__btn > span {
+#menu-toggle:checked + .menu-btn > span {
   transform: rotate(45deg);
 }
-#menu__toggle:checked + .menu__btn > span::before {
+#menu-toggle:checked + .menu-btn > span::before {
   top: 0;
   transform: rotate(0deg);
 }
-#menu__toggle:checked + .menu__btn > span::after {
+#menu-toggle:checked + .menu-btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
-#menu__toggle:checked ~ .menu__box {
+#menu-toggle:checked ~ .menu-box {
   left: 0 !important;
 }
-.menu__btn {
+.menu-btn {
   position: fixed;
   top: 4vh;
   left: 20px;
@@ -97,24 +97,24 @@
   z-index: 1;
   z-index: 101;
 }
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
   position: absolute;
   width: 35px;
   height: 0.2rem;
   background-color: #acacac;
   transition-duration: 0.25s;
 }
-.menu__btn > span::before {
+.menu-btn > span::before {
   content: "";
   top: -8px;
 }
-.menu__btn > span::after {
+.menu-btn > span::after {
   content: "";
   top: 8px;
 }
-.menu__box {
+.menu-box {
   display: block;
   position: fixed;
   top: 0;
@@ -142,7 +142,7 @@
     }
   }
 
-  .menu__item {
+  .menu-item {
     display: block;
     padding: 12px 24px;
     font-size: 1.3rem;
@@ -152,7 +152,7 @@
 
     color: var(--ion-text-color2);
   }
-  .menu__item:hover {
+  .menu-item:hover {
     background-color: #dccfcf;
   }
 }

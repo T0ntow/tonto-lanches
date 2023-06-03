@@ -20,5 +20,9 @@ export class LojasComponent implements OnInit {
   ngOnInit() {
    
   }
+  
+  onSave() {
+    console.log("open pop up");
+  }
       
 }  

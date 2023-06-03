@@ -15,7 +15,6 @@
       <li><a class="link menu__item" routerLink="/lojas">Lojas</a></li>
       <li *ngIf="!lojaExists; else minhaLanchonete"><a class="link menu__item" routerLink="/createLanchonete">Registrar Lanchonete</a></li>
 
-
       <li (click)="logout()" *ngIf="isLoggedIn; else loginButton">
         <a class="link menu__item" >Sair</a>
       </li>
